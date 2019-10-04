@@ -2,19 +2,20 @@
 <launch>
 
 
-<node pkg="tf" type="static_transform_publisher" name="baselink2laser" args="1 0 0 0 0 0 1 base_link scan 100" />
+<node pkg="tf" type="static_transform_publisher" name="static_trasformer" args=" 0.2 0 0.2 0 0 0 1 base_link scan 100" />
 
-<node name="rosaria" pkg="RosAria" type="pioneer2">
+<node name="pioneer2" pkg="rosaria" type="RosAria">
   <param name ="port" value="/dev/ttyUSB0"/>
   <param name ="debug_aria" value="false" />
   <param name ="odom_frame" value="odom"/>
  </node>
 
 
-<node name="sicktoolbox_wrapper" pkg="sicktoolbox_wrapper" type="sicklms">
+<!--node name="sicktoolbox_wrapper" pkg="sicktoolbox_wrapper" type="sicklms">
   <param name ="port" value="/dev/ttyUSB1"/>
   <param name ="connect_delay" value="30.0" />
   <param name ="scan_rate" value="10"/>
- </node>
-
+  <param name ="frame_id" value="scan"/>
+  <param name ="connect_delay" value="30"/>
+ </node-->
  </launch> 
