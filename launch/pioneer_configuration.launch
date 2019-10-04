@@ -2,6 +2,8 @@
 <launch>
 
 
+<node pkg="tf" type="static_transform_publisher" name="baselink2laser" args="1 0 0 0 0 0 1 base_link scan 100" />
+
 <node name="rosaria" pkg="RosAria" type="pioneer2">
   <param name ="port" value="/dev/ttyUSB0"/>
   <param name ="debug_aria" value="false" />
