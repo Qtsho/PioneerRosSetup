@@ -10,12 +10,5 @@
   <param name ="odom_frame" value="odom"/>
  </node>
 
-
-<!--node name="sicktoolbox_wrapper" pkg="sicktoolbox_wrapper" type="sicklms">
-  <param name ="port" value="/dev/ttyUSB1"/>
-  <param name ="connect_delay" value="30.0" />
-  <param name ="scan_rate" value="10"/>
-  <param name ="frame_id" value="scan"/>
-  <param name ="connect_delay" value="30"/>
- </node-->
+<include file="$(find sicktoolbox_wrapper)/launch/lms200.launch" />
  </launch> 
